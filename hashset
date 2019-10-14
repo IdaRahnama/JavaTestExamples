@@ -1,0 +1,39 @@
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+public class MergeNames {
+    
+    public static String[] uniqueNames(String[] names1, String[] names2) {
+        
+        Set<String> set1 = new HashSet<>();
+       
+      
+       for(int i=0 ;i<names1.length;i++)
+         set1.add(names1[i]);
+      
+      for(int i=0 ;i<names2.length;i++)
+         set1.add(names2[i]);
+      System.out.println(set1);
+      
+      //String[] result = new String[set1.size()]; 
+      //for(int i=0 ;i<4;i++)
+       //  result[i]=set1[i];
+       Object[] result = set1.toArray();
+
+		String[] dest = new String[result.length];
+		System.arraycopy(result, 0, dest, 0, result.length);
+
+	
+
+      
+      return dest;    
+    }
+  
+    
+    public static void main(String[] args) {
+        String[] names1 = new String[] {"Ava", "Emma", "Olivia"};
+        String[] names2 = new String[] {"Olivia", "Sophia", "Emma"};
+        System.out.println(String.join(", ", MergeNames.uniqueNames(names1, names2))); // should print Ava, Emma, Olivia, Sophia
+    }
+}

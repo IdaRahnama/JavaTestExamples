@@ -1,0 +1,21 @@
+import java.util.Locale;
+public class Palindrome {
+    public static boolean isPalindrome(String word) {
+        word=word.toLowerCase();
+        char[] c_arr = word.toCharArray();
+        
+        boolean f=true;
+        for(int j=0;j<c_arr.length/2;j++){
+            if (c_arr[j]!=c_arr[c_arr.length-j-1]){
+                f=false;
+            }
+            
+        }
+        return f;
+
+    }
+    
+    public static void main(String[] args) {
+        System.out.println(Palindrome.isPalindrome("Deleveled"));
+    }
+}
